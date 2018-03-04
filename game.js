@@ -2,34 +2,30 @@ function init() {
     startGame();
 }
 
-function resetGame() {
-    let userGuess = "";
-    let userGuessed = [];
-    let userGuessesLeft = 10;
 
-    document.getElementById("guessesLeft").textContent = userGuessesLeft;
-
-    computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-    console.log("Computer letter is " + computerChoice);
-}
 
 function startGame() {
-    console.log("Game started!");
 
     let alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     let computerChoice = "";
     
     let userWins = 0;
     let userLosses = 0;
+    
+    function resetGame() {
+        let userGuess = "";
+        let userGuessed = [];
+        let userGuessesLeft = 10;
+    
+        document.getElementById("guessesLeft").textContent = userGuessesLeft;
+    
+        computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
+        console.log("Computer letter is " + computerChoice);
+    }
 
-    let userGuess = "";
-    let userGuessed = [];
-    let userGuessesLeft = 10;
+    resetGame();
 
-    document.getElementById("guessesLeft").textContent = userGuessesLeft;
-
-    computerChoice = alphabet[Math.floor(Math.random() * alphabet.length)];
-    console.log("Computer letter is " + computerChoice);
+    console.log("Game started!");
 
     // do things when keys are pressed
     document.onkeyup = function(event) {
